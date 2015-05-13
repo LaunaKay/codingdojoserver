@@ -13,7 +13,7 @@ li:last-child {
 a {
 	color:rgb(120,0,0);
 }
-
+/*
 .navlinks {
 	list-style: none;
 	color:yellow;
@@ -25,8 +25,8 @@ a {
 	vertical-align:top;
 	border-right: solid yellow 1px;
 	padding-right: 8px;
-}
-
+}*/
+/*
 .navlinks2 {
 	list-style: none;
 	color:darkgrey;
@@ -43,7 +43,7 @@ a {
 	padding-right: 12px;
 	border-right: solid grey 1px;
 	top:0px;
-}
+}*/
 
 #logo_font {
 	font-family: "Comic Sans MS", cursive, sans-serif;
@@ -67,6 +67,19 @@ a {
 	text-align: right;
 	vertical-align: top;
 	margin-top:30px;
+}
+
+#nav_block li {
+	list-style: none;
+	color:yellow;
+	text-decoration: underline;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	display:inline-block;
+	position:relative;
+	vertical-align:top;
+	border-right: solid yellow 1px;
+	padding-right: 8px;
 }
 
 #header{
@@ -95,6 +108,23 @@ a {
 	margin:0px;
 }
 
+#nav_block2 li {
+	list-style: none;
+	color:darkgrey;
+	text-decoration: underline;
+	font-size: 12px;
+	font-family: "Arial Black", Gadget, sans-serif;
+	display:inline-block;
+	position:relative;
+	vertical-align:top;
+	margin-top:5px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-left: 12px;
+	padding-right: 12px;
+	border-right: solid grey 1px;
+	top:0px;
+}
 #search_box {
 	display:inline-block;
 	position:relative;
