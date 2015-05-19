@@ -1,0 +1,133 @@
+
+body {
+	width:1150px;
+	}
+
+li {
+	outline-style: 1px solid back;
+}
+p {
+	font-family: sans-serif;
+	font-size: 10px;
+	text-align: center;
+	padding:0px;
+	margin:0px;
+}
+
+h1 {
+	font-family: sans-serif;
+	font-size: 25px;
+	color:blue;
+	text-align: center;
+	padding:0px;
+	margin:0px;
+}
+
+.column {
+	display:inline-block;
+	width: 50px;
+	margin:2px;
+	padding-left: 0px;
+	list-style-type:none;
+	list-style-position: inside;
+	list-style:none;
+	vertical-align: bottom;
+}
+
+.column2 {
+	display:inline-block;
+	width: 50px;
+	margin:2px 15px 2px 2px;
+	padding-left: 0px;
+	list-style-type:none;
+	list-style-position: inside;
+	list-style:none;
+	vertical-align: bottom;
+}
+
+.blue {
+	background-color: rgb(104,155,255);
+	margin: 5px 0px 5px 0px;
+	height: 50px;
+	outline: 1px solid black;
+}
+
+.pink {
+	background-color: rgb(253,154,152);
+	margin: 5px 0px 5px 0px;
+	height: 50px;
+	outline: 1px solid black;
+}
+
+.yellow {
+	background-color: rgb(254,203,0);
+	margin: 5px 0px 5px 0px;
+	height: 50px;
+	outline: 1px solid black;
+}
+
+.green {
+	background-color: rgb(31,202,33);
+	margin: 5px 0px 5px 0px;
+	height: 50px;
+	outline: 1px solid black;
+}
+
+/*.green:first-child {
+	background-color: rgb(31,202,33);
+	margin: 20px 0px 5px 0px;
+	height: 50px;
+	outline: 1px solid black;
+}*/
+
+.wideOutline {
+	outline: 2px solid red;
+}
+
+.title {
+	color: red;
+	text-align: center;
+	font-size: 14px;
+	background-color: none;
+	margin: 5px 0px 5px 0px;
+	height:50px;
+	line-height: 50px;
+	vertical-align: center;
+}
+
+#first_title {
+	color: red;
+	text-align: center;
+	font-size: 14px;
+	margin: 0px;
+	background-color: none;
+	margin: 5px 0px 5px 0px;
+	height:50px;
+	vertical-align: center;
+}
+
+.bottom {
+	display: inline-block;
+	margin-top: 25px;
+	vertical-align: top;
+}
+
+.sidebar {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#bottomChart {
+	margin-top: 25px;
+}
+
+#buttonDiv button {
+	background-color: white;
+	color:black;
+	width:100px;
+	font-size: 10px;
+}
+
+#buttonDiv {
+	margin-top: 50px;
+}
