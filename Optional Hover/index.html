@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Puzzle</title>
+	<meta name="description" content="Week 2 jQuery cheatsheet assignment developed for Coding Dojo bootcamp">
+	<meta name="author" content="Launa Bodde">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="stylesheet.css">
+	<link rel="icon" type="image/png" href="LK_Favicon.png">
+</head>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+//ATTRIBUTE - change attributes of an image
+	$("img").hover( function () {
+		temp=$(this).attr("src");
+		$(this).fadeIn("slow");
+		$(this).attr ("src", $(this).attr("alt-source"));
+	},
+	function() {
+		temp=$(this).attr("alt-source");
+		$(this).fadeOut("slow");
+		$(this).attr ("alt-source", $(this).attr(temp));
+		});
+});
+</script>
+
+<body>
+	<h1>Click the picture to get a surprise!</h1>
+	<div id="images">
+		<img src="ninja0.png" alt-source="cat0.png">
+		<img src="ninja1.png" alt-source="cat1.png">
+		<img src="ninja2.png" alt-source="cat2.png">
+		<img src="ninja3.png" alt-source="cat3.png">
+		<img src="ninja4.png" alt-source="cat4.png">
+	</div>
+</body>
+</html>

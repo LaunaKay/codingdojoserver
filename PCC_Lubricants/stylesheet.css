@@ -1,0 +1,11 @@
+#logo_header {
+	width: 970px;
+	background: linear-gradient(to lightgrey,white);
+}
+
+h1 {
+font: Arial;
+font-size: 20px;
+color:rgb(255,255,255,.2em);
+text-indent: right;
+}

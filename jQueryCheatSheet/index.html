@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Interactive Periodic Table</title>
+	<meta name="description" content="Week 2 jQuery cheatsheet assignment developed for Coding Dojo bootcamp">
+	<meta name="author" content="Launa Bodde">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="stylesheet.css">
+	<link rel="icon" type="image/png" href="LK_Favicon.png">
+
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//TOGGLE CLASS
+	$("#button1").on("click", function() 
+		{
+		$(".green").toggleClass("wideOutline");
+		});
+
+//AFTER
+	$("#button2").on("click", function () {
+		alert("This button is working");
+		$("#showElements > p").after("This is Heavy");
+	})
+//APPEND
+	$("#button3").on("click", function () {
+		alert("This button is working");
+		$("#showElements > h1").append("This is heavy");
+	})
+//ATTRIBUTE - change attributes of an image
+	$("#showElements > h1").hover(function () {
+		$("img").attr({
+			src:"ohreally.gif",
+			title:"funny gif",
+			alt:"Why isn't this loading?"
+		})
+	})
+//BEFORE
+	$("#button4").on("click", function() {
+		alert("This button is working");
+		$("#showElements").before("<h1>This is Heavy<h1>");
+	})
+
+//HTML
+	$("#button5").on("click", function() {
+		alert("This button is working");
+		var weightOf = $("li:contains('Li')").html();
+		console.log(weightOf);
+		$("#showElements > h1").append(weightOf);
+	})
+//TEXT
+	$("#button6").on("click", function() {
+		alert("This button is working");
+		$(".green > h1:last").text("HEAVY");
+	})
+
+//VAL
+	$("#inputForm").bind('submit',function(){
+		var inputValue = $("#inputBox").val();
+		console.log(inputValue);
+		var weightOf = $('li:contains("'+inputValue+'")').find("p:last-child").html();
+		console.log(weightOf);
+		$("#inputBox").before("<h3>The weight of this element is:  " + weightOf + "!</h3>");
+   		alert('handled');
+   		return false;
+	});
+//HIDE
+	$("#showElements").click(function() {
+		$(this).hide();
+	});
+
+//SHOW
+	$("#button8").click(function() {
+		$("#showElements").show(1000);
+	});
+
+//SLIDEDOWN/SLIDEUP
+	$("img").click(function () {
+		$("li").slideUp('slow');
+		$("li").slideDown('slow');
+	});
+
+//SLIDETOGGLE
+	$("#button9").click(function () {
+		$("li").slideToggle();
+	});
+
+//FADEOUT/FADEIN
+	$("#button10").click(function() {
+		$("li").fadeOut(1000);
+		$("li").fadeIn(1000);
+	})
+
+})
+</script>
+
+<body>
+		<ul class="column">
+			<li id="first_title">Group Period</li>
+			<li class="title">1</li>
+			<li class="title">2</li>
+			<li class="title">3</li>
+			<li class="title">4</li>
+			<li class="title">5</li>
+			<li class="title">6</li>
+			<li class="title">7</li>
+		</ul>
+		<ul class="column">
+			<li class="title">1</li>
+			<li class="blue"><p>1</p><h1>H</h1><p>1.008</p></li>
+			<li class="blue"><p>3</p><h1>Li</h1><p>6.94</p></li>
+			<li class="blue"><p>11</p><h1>Na</h1><p>22.990</p></li>
+			<li class="blue"><p>19</p><h1>K</h1><p>39.098</p></li>
+			<li class="blue"><p>37</p><h1>Rb</h1><p>85.468</p></li>
+			<li class="blue"><p>55</p><h1>Cs</h1><p>132.91</p></li>
+			<li class="blue"><p>87</p><h1>Fr</h1><p>233.02</p></li>
+		</ul>
+		<ul class="column2">
+			<li class="title">2</li>
+			<li class="title"></li>
+			<li class="blue"><p>1</p><h1>Be</h1><p>9.0122</p></li>
+			<li class="blue"><p>1</p><h1>Mg</h1><p>24.305</p></li>
+			<li class="blue"><p>1</p><h1>Ca</h1><p>40.078</p></li>
+			<li class="blue"><p>1</p><h1>Sr</h1><p>87.62</p></li>
+			<li class="blue"><p>1</p><h1>Ba</h1><p>137.33</p></li>
+			<li class="blue"><p>1</p><h1>Ra</h1><p>226.03</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">3</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">4</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>21</p><h1>Sc</h1><p>44.956</p></li>
+			<li class="pink"><p>39</p><h1>Y</h1><p>88.906</p></li>
+			<li class="pink"><p>71</p><h1>Lu</h1><p>174.97</p></li>
+			<li class="pink"><p>103</p><h1>Lr</h1><p>262.11</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">5</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>22</p><h1>Ti</h1><p>47.867</p></li>
+			<li class="pink"><p>40</p><h1>Zr</h1><p>91.224</p></li>
+			<li class="pink"><p>72</p><h1>Hf</h1><p>178.49</p></li>
+			<li class="pink"><p>104</p><h1>Rf</h1><p>265.12</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">6</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">7</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">8</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">9</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">10</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">11</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">12</li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="title"></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="pink"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">13</li>
+			<li class="title"></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">14</li>
+			<li class="title"></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">15</li>
+			<li class="title"></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">16</li>
+			<li class="title"></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">15</li>
+			<li class="title"></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="title">16</li>
+			<li class="title"></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="yellow"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<div id="bottomChart">
+		<ul class="column">
+			<li class="title"></li>
+			<li class="title"></li>
+		</ul>
+		<ul class="column">
+			<li class="title" style="text-align:left">*Lanthanoids</li>
+			<li class="title" style="text-align:left">**Actinoids</li>
+		</ul>
+		<ul class="column2">
+			<li class="title" style="text-align:right">*</li>
+			<li class="title" style="text-align:right">**</li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+		<ul class="column">
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+			<li class="green"><p>1</p><h1>H</h1><p>1,008</p></li>
+		</ul>
+	</div>
+	<div id="buttonDiv">
+		<button type="button" id="button1">Click to outline the green squares</button>
+		<button type="button" id="button2">Click to add all the heavy elements</button>
+		<button type="button" id="button3">Click to append all the heavy elements</button>
+		<button type="button" id="button4">Click to add a title before an element</button>
+		<button type="button" id="button5">Show me the lightest element</button>
+		<button type="button" id="button6">Show me the heaviest element</button>
+		<button type="button" id="button7">Show me the weight of the heaviest element</button>
+		<form id="inputForm">
+			<h4>Enter and element abbreviation to see it's weight:</h4> <input type="text" name="Find Element" id="inputBox">
+			<input type="submit" value="Submit">
+		</form>
+		<button type="button" id="button8">Show me the table</button>
+		<button type="button" id="button9">Show/Hide the elements</button>
+		<button type="button" id="button10">Show/Hide the elements</button>
+	</div>
+	<div id="showElements" style="display:none;">
+		<h1>These are the heavy elements</h1>
+		<img src="heavy.jpg">
+		<p></p>
+		<br>
+		<br>
+	</div>
+</body>
+</html>

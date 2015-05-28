@@ -1,0 +1,72 @@
+/*CSS reset settings here*/
+/**{
+ margin: 0px;
+ padding: 0px;
+}*/
+
+body {
+	color:black;
+}
+
+ul li {
+	padding-left:0px;
+	margin-left:0px;
+}
+
+.list2 {
+	margin-bottom: 20px;
+}
+
+.neglist {
+	margin-left: -20px;
+}
+
+
+#container{
+	width: 970px;
+	background-color: white;
+	margin-left: 250px;
+}
+
+#header {
+	background-color: lightgrey;
+	margin:25px;
+	position: relative;
+	top: 25px;
+	padding:10px;
+	border-radius: 15px;
+}
+
+#sidebar {
+	background-color: lightgrey;
+	margin:0px 25px 25px 25px;
+	position: relative;
+	display: inline-block;
+	top: 25px;
+	padding: 25px;
+	border-radius: 15px;
+	width:200px;
+	vertical-align: top;
+}
+
+#content {
+	background-color:darkgrey;
+	margin:0px 25px 25px 0px;
+	position: relative;
+	display: inline-block;
+	top: 25px;
+	padding: 25px 25px 50px 25px;
+	border-radius: 15px;
+	bottom:25px;
+	width: 580px;
+	font-size: 20px;
+}
+
+#footer {
+	background-color: lightgrey;
+	margin:25px;
+	position:relative;
+	border-radius: 15px;
+	padding:10px;
+	line-height: 2px;
+}

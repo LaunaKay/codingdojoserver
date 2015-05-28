@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Disappearing Ninja</title>
+	<meta name="description" content="Week 2 jQuery cheatsheet assignment developed for Coding Dojo bootcamp">
+	<meta name="author" content="Launa Bodde">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="stylesheet.css">
+	<link rel="icon" type="image/png" href="LK_Favicon.png">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+	//SHOW/HIDE IMAGES
+		$("img").on("click", function() 
+			{
+			$(this).hide();
+			});
+		$("button").on("click", function() {
+			$("img").show();
+		});
+	});
+	</script>
+</head>
+
+<body>
+	<h1>Click pictures to hide them</h1>
+	<div id="images_row1">
+		<img src="ohreally.gif" alt="Baby photo">
+		<img src="ohreally.gif" alt="Baby photo">
+		<img src="ohreally.gif" alt="Baby photo">
+		<img src="ohreally.gif" alt="Baby photo">
+	</div>
+	<div id="images_row2">
+		<img src="ohreally.gif" alt="Baby photo">
+		<img src="ohreally.gif" alt="Baby photo">
+		<img src="ohreally.gif" alt="Baby photo">
+		<img src="ohreally.gif" alt="Baby photo">
+	</div>
+	<div id="button_div">
+	<button type="button" id="restore_button">Restore adorable babies</button>
+	</div>
+</body>
+</html>
