@@ -1,0 +1,28 @@
+* {
+	font-family: sans-serif;
+}
+
+td {
+	outline:1px solid black;
+	font-size:10px;
+	width: 150px;
+}
+
+td:first-child {
+	font-weight: bold;
+	width: 50px;
+}
+
+td:last-child {
+	width: 50px;
+}
+
+tr:first-child {
+	font-weight:bold;
+	text-align: center;
+}
+
+.grey_row {
+	background-color: black;
+	color:white;
+}

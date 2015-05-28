@@ -1,0 +1,3 @@
+<p>You entered a cave and earned 9 golds. </p>(05/26/15 01:11:51) 
+<p>You entered a house and earned 5 golds.</p>(05/26/15 01:11:55) 
+You entered a casino and earned 25 golds. (05/26/15 01:11:57) 

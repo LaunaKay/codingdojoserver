@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Great Number Game</title>
+        <meta name="description" content="Dynamically generated Survey Form using PHP">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type=""<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="stylesheet.css">
+    	<link rel="icon" type = "image/png" href="LK_Favicon.png">
+    </head>
+<body>
+
+    <?php
+        $_SESSION['number'] = rand(1,100);
+        echo "The number to guess is " . $_SESSION['number'] . "<br>";
+    ?>
+    	<div id = "body_div">
+    		<h1>Welcome to the Great Number Game!</h1>
+            <h3>I am thinking of a number between 1 and 100.</h3>
+            <h3>Take a guess!</h3>
+    		<form method="get">
+                <input name = "guess" type = "text"/>
+    			<input name="mySubmit" type="submit" value="submit"/>
+    		</form>
+            <div id = "noNum">
+                <h3>You didn't enter a number!</h3>
+            </div>
+            <div id = "tooHigh">
+                <h3>Too low!</h3>
+            </div>
+            <div id = "tooHigh">
+                <h3>Too high!</h3>
+            </div>
+            <div id = "correct">
+                <h3><?php echo "{$_SESSION['number']}"?> was the number!</h3>
+                <button>Play again!</button>
+            </div>
+
+		</div>
+    </body>
+</html>

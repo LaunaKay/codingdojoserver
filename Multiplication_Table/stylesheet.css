@@ -1,0 +1,79 @@
+* {
+	font-family: sans-serif;
+	margin: 0px;
+	padding:0px;
+}
+
+h1 {
+	margin-bottom: 25px;
+}
+
+#body_div {
+	width:970px;
+	margin:50px;
+}
+
+.number {
+	outline: 1px solid black;
+	list-style: none;
+	display: inline-block;
+	list-style-type: none;
+	width:50px;
+	height:45px;
+	list-style-position: inside;
+	vertical-align: bottom;
+	text-align: center;
+	font-size: 12px;
+	margin:0px;
+}
+
+.numberBack {
+	outline: 1px solid black;
+	list-style: none;
+	display: inline-block;
+	list-style-type: none;
+	width:50px;
+	height:45px;
+	list-style-position: inside;
+	vertical-align: bottom;
+	text-align: center;
+	font-size: 12px;
+	margin:0px;
+	background-color: lightgrey;
+}
+.numberBold {
+	list-style: none;
+	display: inline-block;
+	list-style-type: none;
+	width:50px;
+	height:45px;
+	list-style-position: inside;
+	vertical-align: bottom;
+	text-align: center;
+	font-size: 14px;
+	margin:0px;
+	font-weight:bold;
+}
+
+.numberBold:first-child {
+	color:white;
+}
+
+.number:first-child {
+	font-weight: bold;
+	outline:none;
+	font-size: 14px;
+}
+
+.numberBack:first-child {
+	font-weight:bold;
+	outline:none;
+	font-size: 14px;
+	background-color: white;
+}
+
+
+p {
+	padding: 10px;
+	margin:0px;
+}
