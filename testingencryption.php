@@ -1,0 +1,5 @@
+<?php
+ $password = 'password';
+ $encrypted_password = md5($password); //the function md5 is native to PHP
+ echo $encrypted_password;
+ ?>
