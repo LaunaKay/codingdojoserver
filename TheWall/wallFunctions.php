@@ -6,7 +6,7 @@ $connection = mysqli_connect("localhost", "root", "root", "thewall");
 
 //QUERY DB for multiple rows returns $data for multiple rows, $result for single row
 
-function Fetch($query)
+function fetch($query)
 {
     $data = array();
     global $connection;

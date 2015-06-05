@@ -45,7 +45,7 @@
             </form>
             <div id="log_div">
                 <h5>Activity Log</h5>
-                <?php if (isset($_SESSION ['score'])) include ('log.html') ?>
+                <?php if (isset($_SESSION ['score'])) include ('/assets/log.html') ?>
             </div.
     </div>
 </body>

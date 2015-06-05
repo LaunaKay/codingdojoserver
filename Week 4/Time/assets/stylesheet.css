@@ -1,0 +1,19 @@
+* {
+    font-family: sans-serif;
+}
+
+h1 {
+    margin: 100px;
+    outline: 1px solid black;
+    width:400px;
+    text-align:center;
+    padding:25px;
+}
+
+h2 {
+    margin: 0px 100px 25px 100px;
+    padding:25px;
+    outline: 1px solid black;
+    width:400px;
+    text-align:center;
+}
