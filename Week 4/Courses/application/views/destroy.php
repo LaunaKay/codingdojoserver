@@ -7,11 +7,16 @@
 <body>
     <div>
         <h1>Are you sure you want to delete the following course?</h1>
-        <h2>Name:</h2>SAMPLE NAME
-        <h2>Description:</h2> SAMPLE DESCRIPTION
-            <form action = 'Courses/destroy' method = 'POST'>
-                <input class = "SubmitBtn" type = "submit" name = "submitHome" value = "No">
-                <input class = "submitBtn" type = "submit" name = "submitDestroy" value = "Yes! I want to delete this">
+        <?php foreach($this->session->userdata('course') as $value)
+        {?>
+        <h2>Name:   <?=$value['name'];?></h2>
+        <h2>Description:  <?=$value['description'];?> </h2>
+        <?}?>
+            <form class = "verifyForm" action = '/add'>
+                <input class = "submitBtn" type = "submit" value = "No">
+            </form>
+            <form class = "verifyForm" action = 'verifyDelete'>
+                <input id = "submitBtn2" type = "submit" value = "Yes! I want to delete this">
             </form>
     </div>
    </body>

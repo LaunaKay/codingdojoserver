@@ -22,24 +22,21 @@ h2 {
     margin-bottom: 10px;
     margin-left:25px;
     text-align: left;
-    display: inline-block;
+    display: block;
 }
 
-input {
-    display: inline-block;
-    width: 500px;
-    height: 25px;
-    margin:0px 75px 25px 25px;
+h6 {
+    color:red;
 }
 
-input:first-child {
-    margin-left:200px;
+
+.inputField {
+    display:block;
+    height:45px;
+    margin-bottom:25px;
+    width:500px;
 }
 
-form {
-    width: 800px;
-
-}
 
 .submitBtn {
     width:100px;
@@ -51,11 +48,46 @@ form {
 
 table {
     width: 900px;
-}
-td {
-    width: 100px;
+    border:1px solid black;
 }
 
-tr {
+th {
+    border-bottom: 1px double black;
+}
+td {
+    width: 50px;
+}
+
+.row0 {
     background-color:lightgrey;
+}
+
+form {
+    border:1px solid black;
+    display: block;
+    padding:25px;
+    margin-bottom: 50px;
+    width:850px;
+    display: inline-block;
+}
+
+#formValues {
+    width:900px;
+    display: inline-block;
+}
+
+.verifyForm {
+    width: 100px;
+    display: inline-block;
+    border:none;
+    outline:none;
+
+}
+
+#submitBtn2 {
+    width:300px;
+    height: 25px;
+    padding:5px;
+    font-weight: bold;
+    background-color: lightgreen;
 }
