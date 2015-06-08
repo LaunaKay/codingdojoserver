@@ -6,6 +6,9 @@
 </head>
 <body>
 	<h1>Products</h1>
+	<h4><?= $this->session->flashdata('created'); ?>
+         <?= $this->session->flashdata('removed');?>
+     	<?= $this->session->flashdata('updated');?></h4>
 	<table>
 		<tr>
 			<th>Name</th>
@@ -13,17 +16,24 @@
 			<th>Price</th>
 			<th>Actions</th>
 		</tr>
-		<tr>
-			<td>filler name</td>
-			<td>filler description</td>
-			<td>filler price</td>
-			<td><a href = '/show'>Show</a>
-			<a href = '/edit'>Edit</a>
-			<form method = 'remove' action = "POST">
-				<input type="submit" name = 'product id' value = "product number"></td>
-			</form>
-		</tr>
+		<?php
+			$i = 0;
+
+			foreach($this->session->userdata('products') as $value)
+		{
+			$i++;?>
+			<tr class = "row<?=$i%2?>">
+				<td><?=$value['name']?></td>
+				<td><?=$value['description']?></td>
+				<td><?=$value['price']?></td>
+				<td><a class = "smallLink" href = 'ProductsC/show_product/<?=$value['id']?>' >Show</a>
+				<a class = "smallLink" href = 'display_product/<?= $value['id']?> '>Edit</a>
+				<form class = "smallForm" action = 'remove_product/<?=$value['id']?>' method = "POST">
+					<input class = "smallSubmitBtn" type="submit" value = "remove"></td>
+				</form>
+			</tr>
+			<?php } ?>
 	</table>
-	<a href= 'new' value = "Add a new product">
+	<a href= 'new' value = "Add a new product">Add a new product</a>
 </body>
 </html>

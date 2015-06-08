@@ -5,7 +5,7 @@
     <link rel="icon" type="image/png" href="assets/LK_Favicon.png">
 </head>
 <body>
-	<form action = 'products/c_create' method = "POST">
+	<form action = 'ProductsC/new_product' method = 'POST'>
 		<fieldset>
 			<legend>Add a new product</legend>
 			<h3>Name:</h3>

@@ -5,13 +5,21 @@
     <link rel="icon" type="image/png" href="assets/LK_Favicon.png">
 </head>
 <body>
-	<h1>Product 1</h1>
-	Name: Hose
-	Description: For watering things
-	Price: $14.99
-
-	<input type="link" href="edit a product" value = "edit  product">
-	<input type="link" href="edit a product" value = "edit  product">
+    <?php
+    foreach($this->session->userdata('current_product') as $value)
+    {?>
+    <fieldset>
+             <legend>Product No. <?=$value['id']?> </legend>
+            <h3>Name:</h3>
+            <h5><?=$value['name']?></h5>
+            <h3>Description:</h3>
+            <h5><?=$value['description']?></h5>
+            <h3>Price:</h3>
+            <h5><?=$value['price']?></h5>
+    </fieldset>
+    <a href="ProductsC/display_product/<?=$value['id']?>" >Edit Product</a>
+    <?php }?>
+    <a href="/">Go Back</a>
 
 </body>
 </html>

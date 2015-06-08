@@ -5,15 +5,25 @@
     <link rel="icon" type="image/png" href="assets/LK_Favicon.png">
 </head>
 <body>
-	<h1>Edit Product 1</h1>
-	Name:
-	<input type="text" value = "t-shirt" >
-	Description:
-	<input type="text" value = "with coding dojo logo" >
-	Price:
-	<input type="text" value = "39.95" >
-	<input type="submit" value = "Update">
-	<input type="link" href="show" value = "Show">
-	<input type="link" href="Back" value = "Back">
+    <?php
+    foreach($this->session->userdata('current_product') as $value)
+    {?>
+    <fieldset>
+        <form action = 'ProductsC/update/<?=$value['id']?>' method = 'POST'>
+            <legend>Edit Product No. <?=$value['id']?> </legend>
+            <h3>Name:</h3>
+            <input type="text" name = "name" value = "<?=$value['name']?>">
+            <h3>Description:</h3>
+            <input type="text" name = "description" value = "<?=$value['description']?>">
+            <h3>Price:</h3>
+            <input type="text" name = "price" value = "<?=$value['price']?>">
+            <!-- <input type = "text" name = "test"> -->
+        	<input class = "submitBtn" type="submit" value = "Update">
+        </form>
+    </fieldset>
+	<a href="ProductsC/show_product/<?=$value['id']?>" >Show Product</a>
+    <?php }?>
+	<a href="/">Go Back</a>
+
 </body>
 </html>

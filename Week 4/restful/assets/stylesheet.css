@@ -3,6 +3,21 @@
     margin: 0px;
     padding: 0px;
 }
+h3 {
+    margin-top: 20px;
+}
+
+h4{
+    text-align: right;
+    color:red;
+    text-size:18px;
+}
+
+h5 {
+    font-size: 32px;
+    font-weight: normal;
+    color: darkgreen;
+}
 
 body {
     width: 970px;
@@ -23,11 +38,26 @@ form {
     margin-bottom: 25px;
 }
 
+.smallForm {
+    width:80px;
+    display:inline-block;
+}
+
 .submitBtn {
     width: 100px;
     background-color: lightgreen;
     color:white;
     padding:10px;
+}
+
+.smallSubmitBtn {
+    width: 100px;
+    font-size: 18px;
+    height: 50px;
+    display:inline-block;
+    background-color: lightgreen;
+    color:white;
+    margin-left: 25px;
 }
 
 input {
@@ -44,6 +74,14 @@ input {
 a {
     font-size: 32px;
     color:green;
+    padding:20px;
+}
+
+.smallLink {
+    font-size: 18px;
+    padding:5px;
+    display:inline-block;
+    border-right: 1px solid black;
 }
 
 table {
@@ -52,7 +90,6 @@ table {
 }
 
 th {
-    width: 200px;
     outline: 1px double black;
 }
 
@@ -81,6 +118,10 @@ input {
     font-weight: bold;
     padding:10px;
     display: inline-block;
+}
+
+.row0 {
+    background-color: lightgrey;
 }
 
 
