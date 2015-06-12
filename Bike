@@ -1,0 +1,54 @@
+class Bike
+{
+    public $price;
+    public $max_speed;
+    public $miles;
+}
+
+$bike1 = new Bike();
+$bike2 = new Bike();
+$bike3 = new Bike();
+
+public function __construct($price, $max_speed)
+{
+    $miles = 0;
+}
+
+public function displayInfo()
+{
+    echo ("The price for this bike is" . $price);
+    echo ("The maximum speed for this bike is" . $max_speed);
+    echo ("The total miles driven are" . $miles);
+}
+
+public function drive(n)
+{
+    echo ("Driving");
+    $miles += 10;
+}
+
+public function reversing(n)
+{
+    echo ("Reversing");
+    $miles +- 5;
+}
+
+public function moving($bike)
+{
+    $this->drive(3);
+    $this->reversing(1);
+    $this->display_info();
+}
+
+public function moving2($bike)
+{
+    $this->drive(2);
+    $this->reversing(2);
+    $this->display_info();
+}
+
+public function moving3($bike)
+{
+    $this->reversing(3);
+    $this->display_info();
+}

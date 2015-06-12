@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-$route['default_controller'] = 'ProductsC/load_all_products';
+$route['default_controller'] = 'ProductsC/get_all_products';
 $route['all_products'] = 'ProductsC/load_all_products';
 $route['new'] = 'ProductsC/load_new';
 $route['remove_product/(:any)'] = 'ProductsC/remove_product/$1';
