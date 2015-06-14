@@ -26,17 +26,21 @@ class C_Logins extends CI_Controller {
 		{
 	            $this->load->view('V_Login');
        	}
-	        else
-	        {
-	            $this->load->model('M_Login');
-				$this->M_Login->log_validation($userinfo);
-	            redirect('display');
-	        }
+        else
+        {
+            $this->load->model('M_Login');
+			$this->M_Login->log_validation($userinfo);
+            redirect('dashboard');
+        }
 	}
 
 	public function Post_Registration()
+    //take post data from registraiton form
 	{
 		$userinfo = $this->input->post(NULL, TRUE);
+		// echo("<pre>");
+		// var_dump($userinfo);
+		// die();
 		if ($this->form_validation->run('registration') == FALSE)
         {
             $this->load->view('V_Login');
@@ -45,12 +49,13 @@ class C_Logins extends CI_Controller {
         {
         	$this->load->model('M_Login');
 			$this->M_Login->reg_validation($userinfo);
-			redirect('display');
+			redirect('dashboard');
         }
 
 	}
 
 	public function Already_Registered()
+    //error message
 	{
 		$this->session->set_flashdata('user', 'This email is already in use');
          redirect('/');
@@ -59,7 +64,7 @@ class C_Logins extends CI_Controller {
 	public function Invalid_User()
 	{
 		$this->session->set_flashdata('user', 'This email/password combination is not valid');
-		redirect('/');
+		redirect('/main');
 	}
 
 	public function Get_All_Users()
@@ -70,9 +75,10 @@ class C_Logins extends CI_Controller {
 	}
 
 	public function logout()
+    //logout
 	{
 		$this->session->unset_userdata('id');
 		$this->session->sess_destroy();
-		redirect('/');
+		redirect('/main');
 	}
 }

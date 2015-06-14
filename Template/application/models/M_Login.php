@@ -10,10 +10,11 @@ class M_Login extends CI_Model
     }
 
     public function reg_validation($userinfo)
+    //validate user's registration information
     {
-            $password = $this->encrypt->encode($userinfo['password']);
-            $email = $userinfo['email'];
-            $userpresent = $this->userpresent($email);
+            $password = $userinfo['password'];
+            $username = $userinfo['username'];
+            $userpresent = $this->userpresent($username);
             if($userpresent > 0)
             {
                 redirect('alreadyregistered');
@@ -21,17 +22,18 @@ class M_Login extends CI_Model
             else
             {
                 $this->addUser($userinfo);
-                $id = $this->userpresent($email);
+                $id = $this->userpresent($username);
                 $this->session->set_userdata('id', $id);
-                redirect('/display');
+                redirect('/dashboard');
             }
     }
 
     public function log_validation($userinfo)
+    //validate user's login information
     {
-            $email = $userinfo['email'];
+            $username = $userinfo['username'];
             $password = $userinfo['password'];
-            $id = $this->usermatch($email, $password);
+            $id = $this->usermatch($username, $password);
             if ($id > 0)
             {
                 $this->session->set_userdata('id', $id);
@@ -42,23 +44,26 @@ class M_Login extends CI_Model
             }
     }
 
-    public function userpresent($email)
+    public function userpresent($username)
+    //check to see if user exists in database
     {
-        return $this->db->query("SELECT id FROM users WHERE email = '{$email}'")->row_array();
+        return $this->db->query("SELECT id FROM users WHERE username = '{$username}'")->row_array();
     }
 
-    public function usermatch($email, $password)
+    public function usermatch($username, $password)
+    //match user's password and username
     {
-        return $this->db->query("SELECT id FROM users WHERE email = '{$email}' && password = '{$password}'")->row_array();
+        return $this->db->query("SELECT id FROM users WHERE username = '{$username}' && password = '{$password}'")->row_array();
     }
 
     public function addUser($userinfo)
+    //add user to DB after validation
     {
         $userinfo = array(
-            'first_name' => $userinfo['first_name'],
-            'last_name' => $userinfo['last_name'],
-            'email' => $userinfo['email'],
-            'password' => $userinfo['password']);
+            'name' => $userinfo['name'],
+            'username' => $userinfo['username'],
+            'password' => $userinfo['password'],
+            'date_hired' => $userinfo['date_hired']);
         $this->db->insert('users', $userinfo);
     }
 }
