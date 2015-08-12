@@ -19,11 +19,13 @@ class C_Dashboards extends CI_Controller {
 
 		$this->load->model('M_Dashboard');
 		$id = $this->session->userdata('id');
-		$wishes = $this->M_Dashboard->getwishes();
+		$wishes = $this->M_Dashboard->getwishes($id['id']);
 
-		$wishlist = array('wishlist'=> $wishlist, 'wishes'=>$wishes);
-		// $wishes = array('wishes'=>$wishes);
+		$this->load->model('M_Dashboard');
+		$id = $this->session->userdata('id');
+		$created = $this->M_Dashboard->getadded($id['id']);
 
+		$wishlist = array('wishlist'=> $wishlist, 'wishes'=>$wishes, 'created' => $created, 'id'=>$id);
 		$this->load->view('V_dashboard', $wishlist);
 	}
 

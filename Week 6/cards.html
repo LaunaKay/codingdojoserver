@@ -1,0 +1,68 @@
+
+<!-- saved from url=(0048)file:///C:/Coding%20Dojo%20Server/Week%206/cards -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+</head>
+<body>
+<script type="text/javascript">
+
+// Create a Deck object constructor. A deck should have the following functionality:
+
+// The Deck should contain the 52 standard cards
+// The Deck should be able to shuffle
+// The Deck should be able to reset
+// The Deck should be able to deal a random card
+// Deal should return the card that was delt and remove it from the deck
+
+var Deck = function()
+{
+   this.cards = ['2H','3H','4H','5H','6H','7H','8H','9H','10H','JH','QH','KH','AH','2D','3D','4D','5D','6D','7D','8D','9D','10D','JD','QD','KD','AD','2C','3C','4C','5C','6C','7C','8C','9C','10C','JC','QC','KC','AC','2S','3S','4S','5S','6S','7S','8S','9S','10S','JS','QS','KS','AS'];
+}
+
+Deck.prototype.shuffle=function()
+{
+    shuffledDeck = Object.create(this.cards);
+
+    for (var i = 0; i<shuffledDeck.length; i++)
+    {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = shuffledDeck[i];
+        shuffledDeck[i] = shuffledDeck[j];
+        shuffledDeck[j] = temp;
+    }
+    console.log('This is a shuffled deck: ' + shuffledDeck);
+}
+
+Deck.prototype.resetDeck=function()
+{
+    // var freshDeck = this.freshDeck;
+    var freshDeck = this.cards;
+    console.log('This is a fresh deck: ' + freshDeck);
+}
+
+Deck.prototype.deal=function()
+{
+    var chosen=(Math.floor(Math.random()*52)+1);
+    var dealtDeck = shuffledDeck;
+    var dealtCard = dealtDeck[chosen];
+    var temp;
+
+    for(var i=chosen; i<dealtDeck.length-1; i++)
+    {
+        temp=dealtDeck[i];
+        dealtDeck[i] = dealtDeck[i+1];
+        dealtDeck[i+1] = temp;
+    }
+    dealtDeck.pop();
+    console.log('The chosen card is: ' + dealtCard);
+    console.log('The deck is now: ' + dealtDeck);
+}
+
+firstDeck = new Deck();
+firstDeck.shuffle();
+firstDeck.deal();
+firstDeck.resetDeck();
+firstDeck.shuffle();
+firstDeck.deal();
+firstDeck.resetDeck();
+
+</script></body></html>

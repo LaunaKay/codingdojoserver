@@ -11,7 +11,7 @@
     <body>
 <?php $this->load->view('V_header_nav'); ?>
 
-        <h1 class="text-center">Hello, <?=$wishlist[0]['name']?></h1>
+        <h1 class="text-center">Hello, <?=$id['name']?></h1>
         <div class = "container">
             <h2>Your Wish List</h2>
             <table class="table table-hover table-striped">
@@ -24,13 +24,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($wishlist as $wish)
+                    <?php if($wishlist)
+                            foreach($wishlist as $wish)
                     {?>
                     <tr>
-                        <td><a href='wish_items/<?=$wish['id']?>'</a><?=$wish['item']?></td>
-                        <td><?=$wish['name']?></td>
+                        <td><a href="wish_items/<?=$wish['id']?>"><?=$wish['item']?></a></td>
+                        <td><?=$wish['NAME']?></td>
                         <td><?=$wish['date_added']?></td>
-                        <td><a href='remove/<?=$wish['id']?>'</a>REMOVE ITEM</td>
+                        <td><a href="removefromlist/<?=$wish['id']?>">Remove from my wishlist</td>
+                    </tr>
+                    <?php } ?>
+                    <?php if($created)
+                            foreach($created as $item)
+                    {?>
+                    <tr>
+                        <td><a href='wish_items/<?=$item['id']?>'><?=$item['item']?></a></td>
+                        <td><?=$item['name']?></td>
+                        <td><?=$item['date_added']?></td>
+                        <td><a href='remove/<?=$item['id']?>'>Delete</td>
                     </tr>
                     <?php } ?>
                 </tbody>
@@ -48,17 +59,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                   <?php foreach($wishes as $wish)
+                   <?php if($wishes)
+                            foreach($wishes as $wish)
                     {?>
                     <tr>
-                        <td><?=$wish['item']?></td>
-                        <td><?=$wish['name']?></td>
+                        <td><a href='wish_items/<?=$wish['id']?>'><?=$wish['item']?></a></td>
+                        <td><?=$wish['NAME']?></td>
                         <td><?=$wish['date_added']?></td>
-                        <td><a href="addtolist/10">Add to Wishlist</td>
+                        <td><a href="addtolist/<?=$wish['id']?>">Add to Wishlist</td>
                     </tr>
                     <?php } ?>
                 </tbody>
             </table>
+        </div>
+        <div>
+            <a style="text-align:right; margin-left:900px; font-size:24px;" href="/wish_items/create">Add Item</a>
         </div>
 
 

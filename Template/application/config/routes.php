@@ -9,6 +9,8 @@ $route['wish_items/create'] = 'C_Wishes/load_create';
 $route['invalid'] = 'C_Logins/Invalid_User';
 $route['logout'] = 'C_Logins/logout';
 $route['remove/(:num)'] = 'C_Wishes/removewish/$1';
+$route['addtolist/(:num)'] = 'C_Wishes/addtolist/$1';
+$route['removefromlist/(:num)'] = 'C_Wishes/removefromlist/$1';
 
 
 $route['404_override'] = '';

@@ -17,13 +17,17 @@ class M_Login extends CI_Model
             $userpresent = $this->userpresent($username);
             if($userpresent > 0)
             {
-                redirect('alreadyregistered');
+                $this->session->set_flashdata('user', 'This username is already in use.');
+                redirect('/main');
             }
             else
             {
                 $this->addUser($userinfo);
                 $id = $this->userpresent($username);
                 $this->session->set_userdata('id', $id);
+                // echo("<pre>");
+                // var_dump($this->session->userdata('id'));
+                // die('died in model');
                 redirect('/dashboard');
             }
     }
@@ -40,20 +44,21 @@ class M_Login extends CI_Model
             }
            else
             {
-                redirect('invalid');
+                $this->session->set_flashdata('user', 'This email/password combination is not valid.');
+                redirect('/main');
             }
     }
 
     public function userpresent($username)
     //check to see if user exists in database
     {
-        return $this->db->query("SELECT id FROM users WHERE username = '{$username}'")->row_array();
+        return $this->db->query("SELECT id, name FROM users WHERE username = '{$username}'")->row_array();
     }
 
     public function usermatch($username, $password)
     //match user's password and username
     {
-        return $this->db->query("SELECT id FROM users WHERE username = '{$username}' && password = '{$password}'")->row_array();
+        return $this->db->query("SELECT id, name FROM users WHERE username = '{$username}' && password = '{$password}'")->row_array();
     }
 
     public function addUser($userinfo)

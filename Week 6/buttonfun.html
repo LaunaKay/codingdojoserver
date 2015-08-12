@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JQuery and Callbacks</title>
+    <script src="C:\bower_components\jquery\dist\jquery.js"></script>
+
+    <style>
+     button {
+        background-color: blue;
+        width:250px;
+        height:75px;
+        color:white;
+     }
+    .red {
+        background-color:red;
+        }
+
+    .hover {
+        background-color:green;
+    }
+
+    </style>
+
+</head>
+<body>
+
+    <div style="margin-top:200px; margin-left:200px;">
+        <button class="blue">Click to Change Color</button>
+    </div>
+
+    <script type-"text/javascript">
+
+    // toggle hover class on hover
+        // $('button').hover(function()
+        // {
+        //     $(this).addClass("hover");
+        // }, function () {
+        //     $(this).removeClass("hover");
+        // });
+
+        $('div').on('mouseenter', 'button', function()
+        {
+            $(this).toggleClass('hover');
+        });
+        $('div').on('mouseleave', 'button', function()
+        {
+            $(this).toggleClass('hover');
+        });
+
+    //toggle red class on click
+        $('div').on('click', 'button', (function() {
+            $(this).toggleClass('red');
+        }));
+
+    //append new button on enterkey press
+    document.onkeydown = function(e)
+    {
+        console.log(e.keyCode);
+        if(e.which == 13)
+        {
+            $('div').clone().appendTo('div');
+        }
+    }
+
+    </script>
+
+</body>
+</html>
